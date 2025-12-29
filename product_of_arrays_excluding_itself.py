@@ -1,4 +1,4 @@
-data = [1,2,3,4,5]
+data = [1,2,3,4]
 
 class Solution():
     def __init__(self):
@@ -47,7 +47,22 @@ class Solution():
 
         return result
     
+    def book_sol_1(self,nums:list[int]) -> list[int]:
+        out = []
+        p = 1
+        # 왼쪽 곱샘
+        for i in range(0, len(nums)):
+            out.append(p)
+            p = p * nums[i]
+        p = 1
+        # 왼쪽 곱샘 결과에 오른쪽 값을 차례대로 곱셈
+        for i in range(len(nums) -1 , -1 , -1):
+            out[i] = out[i]*p
+            p = p * nums[i]
+        
+        return out
+
 sol = Solution()
-result_val = sol.my_sol_2(data)
 print(f"원본 데이터 : {data}")
-print(f"자기 자신을 제외한 배열들의 곲 : {result_val}")
+print(f"자기 자신을 제외한 배열들의 곲 : {sol.my_sol_2(data)}")
+print(f"자기 자신을 제외한 배열들의 곲 : {sol.book_sol_1(data)}")
