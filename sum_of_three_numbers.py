@@ -13,7 +13,7 @@ class Solution():
             # 중복된 첫 번째 숫자는 건너뛰기
             if i > 0 and nums[i] == nums[i-1]:
                 continue
-
+                
             # 2. 나머지 두 숫자를 찾기
             left, right = i + 1, len(nums) - 1
 

@@ -35,7 +35,7 @@ class Solution():
                 if i < i_2 and r < r_2 :
                     # 차이를구하기 
                     temp = r_2 - r 
-                    # print(f"if i < i_2 & r < r_2 : i {i} , i_2 {i_2} , r {r} , r_2 {r_2} , temp {temp}")
+                    print(f"if i < i_2 & r < r_2 : i {i} , i_2 {i_2} , r {r} , r_2 {r_2} , temp {temp}")
 
                     # 가장 큰 갭 찾기
                     if temp > min :
@@ -48,5 +48,32 @@ class Solution():
         print(f"구해진 가장 작은 gap : {gap}")
         pass
 
+    def my_sol_3(self,data:list[int]) -> int:
+        # 1. 초기화
+        min = 0 # 최솟값 저장할 공간
+
+
+        # 2. 최대 페어 찾기
+        for i in range(len(data)):
+
+            for j in range( i + 1 ,len(data)):
+                print(f"data[j] - data[i] : {data[j] - data[i]}")
+                if data[j] - data[i] > min :
+                    min = data[j] - data[i]
+            print(f"{i}반복번째에 최솟값 : {min}")        
+        return min 
+    
+    def book_sol_1(self,prices:list[int]) -> list :
+        max_price = 0
+
+        for i, price in enumerate(prices):
+            for j in range(i, len(prices)):
+                max_price = max( prices(j) - price, max_price)
+
+                pass
+            
+        return max_price
+
+
 sol = Solution()
-print(f"결과값 : {sol.my_sol_2(data)}")
+print(f"결과값 : {sol.my_sol_3(data)}")
