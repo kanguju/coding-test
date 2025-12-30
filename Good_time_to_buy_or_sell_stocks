@@ -1,0 +1,52 @@
+data = [7,1,5,3,6,4]
+
+class Solution():
+    def __init__(self):
+        pass
+
+    def my_sol_1 (self, data: list[int]) -> int:
+        
+        val = 0 # 데이터 최솟값 담을 공간
+        
+        val = data[0]   # 초기화
+        gap = []    # 페어를 저장할 공간
+
+        # 좌측 작은값 우측 더큰값 해서 페어구하기
+        for i,r in enumerate(data):
+            
+
+            pass
+
+        pass
+
+    def my_sol_2 (self,data: list[int]) -> int:
+        # 1. 초기화
+        val = 0 # 최솟값 담을공간 
+        val = data[0] # 초기화
+        gap = [] # 페어를 저장할 공간
+        temp = 0 # 페어 차이 저장할 공간
+        min = 0 # 최솟값 저장할 공간
+
+        # 2. ( 작은값, 큰값 ) 페어 구하기
+        for i,r in enumerate(data):
+            # print(f"for i,r in enumerate(data): {i} {r}")
+            for i_2,r_2 in enumerate(data):
+                # print(f"for i_2,r_2 in enumerate(data): {i_2} {r_2}")
+                if i < i_2 and r < r_2 :
+                    # 차이를구하기 
+                    temp = r_2 - r 
+                    # print(f"if i < i_2 & r < r_2 : i {i} , i_2 {i_2} , r {r} , r_2 {r_2} , temp {temp}")
+
+                    # 가장 큰 갭 찾기
+                    if temp > min :
+                        min = temp
+                        print(f"temp > min , min = temp : {temp} {min}")
+                        gap.insert(0,[i,i_2])
+
+                
+                    
+        print(f"구해진 가장 작은 gap : {gap}")
+        pass
+
+sol = Solution()
+print(f"결과값 : {sol.my_sol_2(data)}")
